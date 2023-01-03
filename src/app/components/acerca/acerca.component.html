@@ -1,0 +1,26 @@
+<div class="cont_acerca">
+    <div class="acerca">
+        <h4>Acerca de</h4>
+        <img class="btn_editar" [src]="img_editar" (click)="activar_ventana()" alt="">
+    </div>
+    <div class="acerca_descrip">
+        <p>{{descripcion}}.</p>
+    </div>
+</div>
+
+
+
+<div [class]="clase_vent" id="reg">
+    <div class="cont_vent ventana_acerca" id="cont_vent">
+        <div class="vent_titulo">
+            <h4>Acerca de</h4>
+            <img src="../assets/cruz.png" alt="" class="icono_cerrar" (click)="activar_ventana()" id="icono_cerrar">
+        </div>
+        <p>Descripcion <textarea class="form-control" name="" id="" cols="30" rows="3" [value]="descripcion"></textarea> </p>
+ 
+        <div class="vent_btns">
+            <button class="btn btn_accion btn-primary">Aceptar</button>
+            <button class="btn btn_accion btn-secondary" (click)="activar_ventana()" >Cancelar</button>
+        </div>  
+    </div>
+</div>

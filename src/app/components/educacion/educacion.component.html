@@ -1,0 +1,49 @@
+<div class="cont_educacion">
+    <div class="cont_encabezado">
+        <h4>Educación</h4> 
+        <img class="btn_agregar" [src]="img_agregar" (click)="activar_ventana()" alt="">
+    </div>
+    <div *ngFor="let per_edu of lista_educacion">
+        <app-per-educacion [per_edu]="per_edu"></app-per-educacion>
+    </div>
+        
+
+</div>
+
+
+
+
+<div [class]="clase_vent" id="reg">
+    <div class="cont_vent ventana_educacion" id="cont_vent">
+        <div class="vent_titulo">
+            <h4>Educacion</h4>
+            <img src="../assets/cruz.png" alt="" class="icono_cerrar"  (click)="activar_ventana()" id="icono_cerrar">
+    
+        </div>
+        <div class="vent_descrip">
+            <div class="vent_descrip__img">
+                <img src="../../../assets/educacion.png" class="logo" alt="">
+                <p>Url Logo</p>
+                <input type="text" class="form-control">
+            </div>
+            <div class="vent_descrip__info">
+                <p class="">Nombre del Estudio<input type="text" class="form-control" name="" id=""></p>
+                
+                <p class="">Nombre de la institucion<input type="text" class="form-control" name="" id=""></p>
+                
+                <p class="">Fecha desde:<input type="date" class="form-control" >  Fecha hasta: <input type="date" class="form-control" name="" id=""></p>
+                <p>Actualidad <input type="checkbox" name="" id=""></p>
+            </div>
+
+            
+
+        </div>
+        <div class="vent_btns">
+            <button class="btn btn_accion btn-primary">Aceptar</button>
+            <button class="btn btn_accion btn-secondary" (click)="activar_ventana()">Cancelar</button>
+        </div>
+        
+            
+    </div>
+
+</div>

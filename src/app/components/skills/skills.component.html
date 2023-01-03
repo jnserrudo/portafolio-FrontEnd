@@ -1,0 +1,15 @@
+<div class="cont_skills">
+    <div class="cont_encabezado">
+        <h4>Hard Skill & Soft Skills</h4>
+        <img class="btn_agregar" src="/assets/agregar.png" alt="">
+
+    </div>
+
+    <div class="cont_skill">
+        
+                <div *ngFor="let per_skill of lista_skills">
+                    <app-per-skill [per_skill]="per_skill"></app-per-skill>
+                </div>      
+    </div>
+    
+</div>

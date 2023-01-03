@@ -1,0 +1,33 @@
+<div class="cont_proyectos">
+    <div class="cont_encabezado cont_encabezado_proyecto">
+        <h4>Proyectos</h4>
+        <img class="btn_agregar" [src]="img_agregar" (click)="activar_ventana()" alt="">
+
+    </div>
+    <div class="cont_proyecto">
+        <div *ngFor="let per_proy of lista_proyectos">
+            <app-per-proyecto [per_proy]="per_proy"></app-per-proyecto>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<div [class]="clase_vent" id="reg">
+    <div class="cont_vent ventana_proyectos" id="cont_vent">
+        <div class="vent_titulo">
+            <h4>Proyectos</h4>
+            <img src="../assets/cruz.png" alt="" class="icono_cerrar" (click)="activar_ventana()" id="icono_cerrar">
+        </div>
+        <div class="proyecto_descrip">
+            <p>Nombre: <input class="form-control" type="text" name="" id=""></p>
+            <p>Url proyecto: <input class="form-control" type="text" name="" id=""></p>
+            <p>Descripcion: <textarea class="form-control" name="" id="" cols="30" rows="3"></textarea></p>
+        </div>  
+        <div class="vent_btns">
+            <button class="btn btn_accion btn-primary">Aceptar</button>
+            <button class="btn btn_accion btn-secondary" (click)="activar_ventana()">Cancelar</button>
+        </div>  
+    </div>
+</div>

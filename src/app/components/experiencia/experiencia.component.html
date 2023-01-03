@@ -1,0 +1,123 @@
+<div class="cont_experiencia">
+    <div class="cont_encabezado">
+        <h4>Experiencia</h4>
+        <img class="btn_agregar" (click)="activar_ventana()" src="/assets/agregar.png" alt="">
+    </div>
+
+    <div *ngFor="let per_exp of lista_experiencias">
+        <app-per-experiencia [per_exp]="per_exp" ></app-per-experiencia>
+    </div>
+
+    
+</div>
+
+<!-- 
+    --------------------------------------------------ventana emergentee--------------------------------------------------
+ -->
+<div [class]="clase_vent" id="reg">
+    <div class="cont_vent ventana_experiencia" id="cont_vent">
+        <div class="vent_titulo">
+            <h4>Experiencia</h4>
+            <img src="../assets/cruz.png" alt="" class="icono_cerrar" (click)="activar_ventana()" id="icono_cerrar">
+    
+        </div>
+        <div class="vent_descrip">
+            <div class="vent_descrip__img">
+                <img src="../../../assets/exp_laboral.png" class="logo" alt="">
+                <p>Url Logo</p>
+                <input type="text" class="form-control">
+            </div>
+            <div class="vent_descrip__info">
+                <p class="">Nombre del Cargo<input type="text" class="form-control" name="" id=""></p>
+                
+                <p class="">Nombre de la Empresa<input type="text" class="form-control" name="" id=""></p>
+                
+                <p class="">Fecha desde:<input type="date" class="form-control" >  Fecha hasta: <input type="date" class="form-control" name="" id=""></p>
+                <p>Actualidad <input type="checkbox" name="" id=""></p>
+            </div>
+
+            
+
+        </div>
+        <div class="vent_btns">
+            <button class="btn btn_accion btn-primary" (click)="agregar_exp()">Aceptar</button>
+            <button class="btn btn_accion btn-secondary" (click)="activar_ventana()" >Cancelar</button>
+        </div>
+        
+            
+    </div>
+
+</div>
+
+
+
+<div class="reg" id="reg">
+    <div class="cont_vent ventana_eliminar" id="cont_vent">
+        <div class="vent_titulo">
+            <h4>Eliminar</h4>
+            <img src="../assets/cruz.png" alt="" class="icono_cerrar" id="icono_cerrar">
+    
+        </div>
+        <p>¿Esta seguro de Eliminar?</p>
+
+            
+
+        <div class="vent_btns">
+            <button class="btn btn_accion btn-primary">Aceptar</button>
+            <button class="btn btn_accion btn-secondary">Cancelar</button>
+        </div>
+        
+            
+    </div>
+
+</div>
+
+<div class="reg" id="reg">
+    <div class="cont_vent ventana_tecnologias" id="cont_vent">
+        <div class="vent_titulo">
+            <h4>Tecnologias</h4>
+            <img src="../assets/cruz.png" alt="" class="icono_cerrar" id="icono_cerrar">
+    
+        </div>
+        <div class="tecnologia_descrip">
+            <p>Nombre: <input class="form-control" type="text" name="" id=""></p>
+            
+            <p>Nivel</p>
+
+            <select class="form-control" name="" id="">
+                <option value="1">25%</option>
+                <option value="2">50%</option>
+                <option value="3">75%</option>
+                <option value="4">100%</option>
+            </select>
+        </div>  
+        <div class="vent_btns">
+            <button class="btn btn_accion btn-primary">Aceptar</button>
+            <button class="btn btn_accion btn-secondary">Cancelar</button>
+        </div>
+        
+            
+    </div>
+
+</div>
+
+
+
+
+<div class="reg" id="reg">
+    <div class="cont_vent ventana_lugar" id="cont_vent">
+        <div class="vent_titulo">
+            <h4>Lugar</h4>
+            <button class="btn btn_accion btn-primary">Ver Lugares</button>
+
+            <img src="../assets/cruz.png" alt="" class="icono_cerrar" id="icono_cerrar">
+        </div>
+        <p>Nombre: <input class="form-control" type="text" name="" id=""></p>
+ 
+        <div class="vent_btns">
+            <button class="btn btn_accion btn-primary">Aceptar</button>
+            <button class="btn btn_accion btn-secondary">Cancelar</button>
+        </div>  
+    </div>
+</div>
+
