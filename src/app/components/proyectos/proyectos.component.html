@@ -21,12 +21,12 @@
             <img src="../assets/cruz.png" alt="" class="icono_cerrar" (click)="activar_ventana()" id="icono_cerrar">
         </div>
         <div class="proyecto_descrip">
-            <p>Nombre: <input class="form-control" type="text" name="" id=""></p>
-            <p>Url proyecto: <input class="form-control" type="text" name="" id=""></p>
-            <p>Descripcion: <textarea class="form-control" name="" id="" cols="30" rows="3"></textarea></p>
+            <p>Nombre: <input class="form-control" type="text" name="" #idInput_nom_proy></p>
+            <p>Url proyecto: <input class="form-control" type="text" name="" #idInput_url_proy></p>
+            <p>Descripcion: <textarea class="form-control" name="" #idInput_descripcion cols="30" rows="3"></textarea></p>
         </div>  
         <div class="vent_btns">
-            <button class="btn btn_accion btn-primary">Aceptar</button>
+            <button class="btn btn_accion btn-primary" (click)="agregar_proy(idInput_nom_proy,idInput_url_proy,idInput_descripcion)">Aceptar</button>
             <button class="btn btn_accion btn-secondary" (click)="activar_ventana()">Cancelar</button>
         </div>  
     </div>

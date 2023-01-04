@@ -24,22 +24,22 @@
             <div class="vent_descrip__img">
                 <img src="../../../assets/educacion.png" class="logo" alt="">
                 <p>Url Logo</p>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" #idInput_url_logo>
             </div>
             <div class="vent_descrip__info">
-                <p class="">Nombre del Estudio<input type="text" class="form-control" name="" id=""></p>
+                <p class="">Nombre del Estudio<input type="text" class="form-control" name="" #idInput_nom_edu></p>
                 
-                <p class="">Nombre de la institucion<input type="text" class="form-control" name="" id=""></p>
+                <p class="">Nombre de la institucion<input type="text" class="form-control" name="" #idInput_nom_empresa></p>
                 
-                <p class="">Fecha desde:<input type="date" class="form-control" >  Fecha hasta: <input type="date" class="form-control" name="" id=""></p>
-                <p>Actualidad <input type="checkbox" name="" id=""></p>
+                <p class="">Fecha desde:<input type="date" class="form-control" #idInput_fecha_desde >  Fecha hasta: <input type="date" class="form-control" name="" #idInput_fecha_hasta></p>
+                <p>Actualidad <input type="checkbox" name="" #idInput_actualidad></p>
             </div>
 
             
 
         </div>
         <div class="vent_btns">
-            <button class="btn btn_accion btn-primary">Aceptar</button>
+            <button class="btn btn_accion btn-primary" (click)="agregar_edu(idInput_url_logo,idInput_nom_edu,idInput_nom_empresa,idInput_fecha_desde,idInput_fecha_hasta,idInput_actualidad)">Aceptar</button>
             <button class="btn btn_accion btn-secondary" (click)="activar_ventana()">Cancelar</button>
         </div>
         
