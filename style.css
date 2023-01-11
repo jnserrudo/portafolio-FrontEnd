@@ -1,0 +1,149 @@
+:root{
+    --celeste:#3498DB;
+    --verde:#28B463;
+    --blanco:#E5E8E8;
+    --gris:#95A5A6;
+    --negro:#1B2631
+
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+p{
+    font-size: 0.8rem;
+    padding: 0;
+    margin: 0;
+}
+.nav{
+    background-color: var(--negro);
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.txt_nom{
+    color: var(--blanco);
+}
+
+.txt_celeste{
+    color: var(--celeste);
+}
+.btn_login{
+    border-radius: 5px;
+    border: 2px var(--verde) solid;
+    background-color: transparent;
+    color: var(--verde);
+}
+.descrip__datos_personales,.cont_btns_acciones{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.descrip,.descrip__info,.cont_img_portada{
+    width: 100%;
+    
+}
+/* .descrip__info{
+    position: relative;
+} */
+
+.cont_foto_perfil{
+    position: relative;
+    width: 200px;
+    top: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn_editar,.btn_agregar{
+    width: 20px;
+    height: 20px;
+}
+
+.img_portada{
+    width: 100%;
+    height:250px ;
+    object-fit: cover;
+}
+
+.foto_perfil{
+    display: block;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px black solid;
+}
+
+.btn_accion{
+    border: 2px var(--gris) solid;
+    height: 40px;
+}
+
+.img_estudio{
+    width: 200px;
+}
+.logo{
+    width: 80px;
+    height: 80px;
+}
+
+.acerca{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px
+}
+.cont_encabezado,.proyecto,.skill{
+    display: flex;
+    justify-content:space-between;
+    padding: 5px;
+    
+}
+
+
+.barra_progreso{
+    width: 1000px;
+    border: 0.5px black solid;
+
+}
+
+.skill_info{
+    margin: 5px;
+    padding-left: 100px;
+}
+
+.cont_skills,.cont_proyectos{
+    /* border: 0.1px var(--gris) solid; */
+    border-radius: 10px;
+    margin: 5px 2px;
+
+}
+
+.proyecto_info,.skills_info{
+    padding: 0px 30px;
+    
+}
+.skill_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont_experiencia_educacion{
+    display: flex;
+    justify-content:space-between;
+}
+.cont_experiencia,.cont_educacion{
+    /* border: 0.1px var(--gris) solid; */
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+}
+
+.logo_experiencia,.experiencia,.acciones,.logo_educacion,.educacion{
+    display: flex;
+    justify-content: space-between;
+}
