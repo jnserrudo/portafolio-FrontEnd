@@ -1,0 +1,15 @@
+<div class="educacion">
+    <div class="logo_educacion">
+        <img class="logo" [src]="url_logo" alt="">
+        <div class="educacion__info">
+            <h6>{{nom_educacion}}</h6>
+            <p>{{nom_institucion}}</p>
+            <p>{{fecha}}</p>
+        </div>
+    </div>
+
+    <div class="acciones" *ngIf="isLogged">
+        <img class="btn_editar" src="/assets/editar.png" (click)="evento_edit_edu()" alt="">
+        <img class="btn_editar" src="/assets/borrar.png" (click)="evento_elim_edu()" alt="">
+    </div>
+</div>

@@ -1,0 +1,143 @@
+<div class="cont_educacion">
+  <div class="cont_encabezado">
+    <h4>Educación</h4>
+    <img
+      class="btn_agregar"
+      [src]="img_agregar"
+      (click)="activar_ventana(1)"
+      alt=""
+    />
+  </div>
+  <div *ngFor="let per_edu of educacion">
+    <app-per-educacion
+      [per_edu]="per_edu"
+      (eventoEdu_edit)="ventana_edit_edu($event)"
+      (eventoEdu_eliminar)="ventana_elim_edu($event)"
+    ></app-per-educacion>
+  </div>
+</div>
+<!-- ventana emergente -->
+<div [class]="clase_vent" id="reg">
+  <div class="cont_vent ventana_educacion" id="cont_vent">
+    <div class="vent_titulo">
+      <h4>Educacion</h4>
+      <img
+        src="../assets/cruz.png"
+        alt=""
+        class="icono_cerrar"
+        (click)="activar_ventana()"
+        id="icono_cerrar"
+      />
+    </div>
+    <div class="vent_descrip">
+      <div class="vent_descrip__img">
+        <img src="../../../assets/educacion.png" class="logo" alt="" />
+        <p>Url Logo</p>
+        <input type="text" class="form-control" #idInput_url_logo />
+      </div>
+      <div class="vent_descrip__info">
+        <p class="">
+          Nombre del Estudio<input
+            type="text"
+            class="form-control"
+            name=""
+            #idInput_nom_educacion
+            [(ngModel)]="edu_edit.nom_educacion"
+          />
+        </p>
+
+        <p class="">
+          Nombre de la institucion<input
+            type="text"
+            class="form-control"
+            name=""
+            #idInput_nom_institucion
+            [(ngModel)]="edu_edit.nom_institucion"
+
+          />
+        </p>
+
+        <p class="">
+          Fecha desde:<input
+            type="date"
+            #idInput_fecha_desde
+            class="form-control"
+            [(ngModel)]="edu_edit.fecha_desde"
+
+          />
+          Fecha hasta:
+          <input
+            type="date"
+            class="form-control"
+            name=""
+            #idInput_fecha_hasta
+            [(ngModel)]="edu_edit.fecha_hasta"
+          />
+        </p>
+        <p>Actualidad <input type="checkbox" name="" #idInput_actualidad /></p>
+      </div>
+    </div>
+    <div class="vent_btns">
+      <button
+        class="btn btn_accion btn-primary"
+        *ngIf="!modo_edit"
+        (click)="
+          agregar_edu(
+            idInput_url_logo,
+            idInput_nom_educacion,
+            idInput_nom_institucion,
+            idInput_fecha_desde,
+            idInput_fecha_hasta,
+            idInput_actualidad
+          )
+        "
+      >
+        Aceptar
+      </button>
+      <button
+        class="btn btn_accion btn-primary"
+        *ngIf="modo_edit"
+        (click)="
+          agregar_edu(
+            idInput_url_logo,
+            idInput_nom_educacion,
+            idInput_nom_institucion,
+            idInput_fecha_desde,
+            idInput_fecha_hasta,
+            idInput_actualidad
+          )
+        "
+      >
+        Editar
+      </button>
+      <button class="btn btn_accion btn-secondary" (click)="activar_ventana()">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div [class]="clase_vent_elim" id="reg">
+  <div class="cont_vent ventana_eliminar" id="cont_vent">
+    <div class="vent_titulo">
+      <h4>Eliminar</h4>
+      <img
+        src="../assets/cruz.png"
+        alt=""
+        class="icono_cerrar"
+        id="icono_cerrar"
+      />
+    </div>
+    <p>¿Esta seguro de Eliminar?</p>
+    <div class="vent_btns">
+      <button class="btn btn_accion btn-primary" (click)="delete()">
+        Aceptar
+      </button>
+      <button class="btn btn_accion btn-secondary">Cancelar</button>
+    </div>
+  </div>
+</div>
+

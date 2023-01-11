@@ -1,0 +1,19 @@
+<div class="experiencia">
+    <div class="logo_experiencia">
+        <img class="logo" [src]="url_logo" alt="">
+        <div class="experiencia__info">
+            <!-- <h6>{{nom_cargo}}</h6>
+            <p>{{nom_empresa}}</p>
+            <p>{{fecha_desde}}-{{fecha_hasta}}</p>
+            <p>{{domicilio}}</p> -->
+            <h6>{{nom_cargo}}</h6>
+            <h6>{{nom_empresa}}</h6>
+            <p>{{fecha}}</p>
+        </div>
+    </div>
+
+    <div class="acciones" *ngIf="isLogged">
+        <img class="btn_editar" src="/assets/editar.png" (click)="evento_edit_exp()" alt="">
+        <img class="btn_editar" src="/assets/borrar.png" (click)="evento_elim_exp()" alt="">
+    </div>
+</div>

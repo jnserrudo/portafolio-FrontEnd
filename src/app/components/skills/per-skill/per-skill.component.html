@@ -1,0 +1,15 @@
+<div class="skill">
+                    <div class="skill_info">
+                        <p>{{nombre}}</p>
+                        <div class="progress barra_progreso" [ngSwitch]="nivel">
+                            <div *ngSwitchCase="1" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{porcentaje}}%</div>
+                            <div *ngSwitchCase="2" class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{{porcentaje}}%</div>
+                            <div *ngSwitchCase="3" class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">{{porcentaje}}%</div>
+                            <div *ngSwitchCase="4" class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{porcentaje}}%</div>
+                        </div>
+                    </div>                
+                    <div class="acciones">
+                        <img class="btn_editar" src="/assets/editar.png" alt="">
+                        <img class="btn_editar" src="/assets/borrar.png" alt="">
+                    </div>
+</div>

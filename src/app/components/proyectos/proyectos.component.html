@@ -1,0 +1,14 @@
+<div class="cont_proyectos">
+    <div class="cont_encabezado cont_encabezado_proyecto">
+        <h4>Proyectos</h4>
+        <img class="btn_agregar" [src]="img_agregar" (click)="activar_ventana()" alt="">
+
+    </div>
+    <div class="cont_proyecto">
+        <div *ngFor="let per_proy of lista_proyectos">
+            <app-per-proyecto [per_proy]="per_proy"></app-per-proyecto>
+        </div>
+    </div>
+
+</div>
+
