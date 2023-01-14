@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-//  apiURL:'https://portafolio-backend-jnserrudo.onrender.com/'
-  apiURL:'http://localhost:8080/'
+  apiURL:'https://portafolio-backend-jnserrudo.onrender.com/'
+  //apiURL:'http://localhost:8080/'
 
 };
 

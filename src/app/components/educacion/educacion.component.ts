@@ -71,27 +71,33 @@ export class EducacionComponent implements OnInit {
   }
 
   activar_ventana(band?:number):void{
-    //la bandera es para ver si estamos agregando o no
-    if(band){
-      this.modo_edit=false
+    if(!this.activar_vent_elim){
+//la bandera es para ver si estamos agregando o no
+        if(band){
+          this.modo_edit=false
+        }
+            this.activar_vent=!this.activar_vent
+            if(this.activar_vent){
+              this.clase_vent+=" activar"
+            }
+            else{
+              this.clase_vent="reg";
+            }
+            if(!this.modo_edit){
+              this.edu_edit.nom_educacion=''
+              this.edu_edit.nom_institucion=''
+              this.edu_edit.fecha_desde=''
+              this.edu_edit.fecha_hasta=''
+            }
+            this.cargarEducacion()
+    }else{
+      this.activar_vent_elim=!this.activar_vent_elim
+      this.clase_vent_elim="reg"
     }
-        this.activar_vent=!this.activar_vent
-        if(this.activar_vent){
-          this.clase_vent+=" activar"
-        }
-        else{
-          this.clase_vent="reg";
-        }
-        if(!this.modo_edit){
-          this.edu_edit.nom_educacion=''
-          this.edu_edit.nom_institucion=''
-          this.edu_edit.fecha_desde=''
-          this.edu_edit.fecha_hasta=''
-        }
 
 
-        this.cargarEducacion()
-      }
+
+  }
 
 
   delete(id?: number){

@@ -130,6 +130,7 @@
         alt=""
         class="icono_cerrar"
         id="icono_cerrar"
+        (click)="activar_ventana()"
       />
     </div>
     <p>¿Esta seguro de Eliminar?</p>
@@ -138,7 +139,7 @@
       <button class="btn btn_accion btn-primary" (click)="delete()">
         Aceptar
       </button>
-      <button class="btn btn_accion btn-secondary">Cancelar</button>
+      <button class="btn btn_accion btn-secondary" (click)="activar_ventana()">Cancelar</button>
     </div>
   </div>
 </div>
@@ -160,7 +161,7 @@
 
     <div class="vent_btns">
       <button class="btn btn_accion btn-primary">Aceptar</button>
-      <button class="btn btn_accion btn-secondary">Cancelar</button>
+      <button class="btn btn_accion btn-secondary" >Cancelar</button>
     </div>
   </div>
 </div>

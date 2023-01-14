@@ -3,7 +3,7 @@
         <a [href]="url" target="_blank"><h6 class="txt_celeste">{{nombre}}</h6></a>
         <p>{{descripcion}}</p>
     </div>
-    <div class="acciones">
+    <div class="acciones" *ngIf="isLogged">
         <img class="btn_editar" src="/assets/editar.png" (click)="evento_edit_proy()" alt="">
         <img class="btn_editar" src="/assets/borrar.png" (click)="evento_elim_proy()" alt="">
     </div>

@@ -89,24 +89,32 @@ export class SkillsComponent implements OnInit {
 
   activar_ventana(band?:number):void{
 
+    if(!this.activar_vent_elim){
 //la bandera es para ver si estamos agregando o no
-if(band){
-  this.modo_edit=false
-}
-    this.activar_vent=!this.activar_vent
-    if(this.activar_vent){
-      this.clase_vent_skill+=" activar"
-    }
-    else{
-      this.clase_vent_skill="reg";
-    }
-    if(!this.modo_edit){
-      this.skill_edit.nombre=''
-      this.skill_edit.porcentaje=0
+      if(band){
+        this.modo_edit=false
+      }
+          this.activar_vent=!this.activar_vent
+          if(this.activar_vent){
+            this.clase_vent_skill+=" activar"
+          }
+          else{
+            this.clase_vent_skill="reg";
+          }
+          if(!this.modo_edit){
+            this.skill_edit.nombre=''
+            this.skill_edit.porcentaje=0
+          }
+
+
+          this.cargarSkill()
+    }else{
+      this.activar_vent_elim=!this.activar_vent_elim
+      this.clase_vent_elim="reg"
     }
 
 
-    this.cargarSkill()
+
 
 
 

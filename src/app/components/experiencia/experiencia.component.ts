@@ -62,26 +62,35 @@ export class ExperienciaComponent implements OnInit {
 
   activar_ventana(band?:number):void{
 //la bandera es para ver si estamos agregando o no
-if(band){
-  this.modo_edit=false
+if(!this.activar_vent_elim){
+
+  if(band){
+    this.modo_edit=false
+  }
+      this.activar_vent=!this.activar_vent
+      if(this.activar_vent){
+        this.clase_vent+=" activar"
+      }
+      else{
+        this.clase_vent="reg";
+      }
+      if(!this.modo_edit){
+        this.edit_exp.nom_cargo=''
+        this.edit_exp.nom_empresa=''
+        this.edit_exp.fecha_desde=''
+        this.edit_exp.fecha_hasta=''
+        this.edit_exp.descripcion=''
+      }
+
+
+      this.cargarExperiencia()
+}else{
+  this.activar_vent_elim=!this.activar_vent_elim
+
+  this.clase_vent_elim='reg'
 }
-    this.activar_vent=!this.activar_vent
-    if(this.activar_vent){
-      this.clase_vent+=" activar"
-    }
-    else{
-      this.clase_vent="reg";
-    }
-    if(!this.modo_edit){
-      this.edit_exp.nom_cargo=''
-      this.edit_exp.nom_empresa=''
-      this.edit_exp.fecha_desde=''
-      this.edit_exp.fecha_hasta=''
-      this.edit_exp.descripcion=''
-    }
 
 
-    this.cargarExperiencia()
   }
 
 

@@ -40,7 +40,7 @@ export class AcercaComponent implements OnInit {
 
   }
   cargarPersona():void{
-    this.personaService.detail(2).subscribe(data=>{
+    this.personaService.detail(1).subscribe(data=>{
       this.persona=data
       this.acerca_editar=this.persona.descripcion
     })
@@ -62,7 +62,7 @@ export class AcercaComponent implements OnInit {
 
     let persona_acerca=new persona("Jose Nahuel","Serrudo","/assets/perfil.jfif",this.acerca_editar)
 
-    this.personaService.update(2, persona_acerca).subscribe(
+    this.personaService.update(1, persona_acerca).subscribe(
       data => {
         this.router.navigate(['']);
         location.reload()

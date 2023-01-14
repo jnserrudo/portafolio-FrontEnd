@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(public personaService:PersonaService,private tokenService: TokenService) {
     this.img_portada="/assets/portada.png"
-    this.img_perfil="/assets/perfil.jfif"
+    this.img_perfil="/assets/perfil.png"
     this.img_editar="/assets/editar.png"
     this.img_ucasal="/assets/ucasal.png"
 
@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
 
   }
   cargarPersona():void{
-    this.personaService.detail(2).subscribe(data=>{this.persona=data})
+    this.personaService.detail(1).subscribe(data=>{this.persona=data})
   }
 
 }

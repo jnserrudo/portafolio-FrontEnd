@@ -79,27 +79,35 @@ export class ProyectosComponent implements OnInit {
 
 
   activar_ventana(band?:number):void{
-    //la bandera es para ver si estamos agregando o no
-    console.log(this.proy_edit)
-    if(band){
-      this.modo_edit=false
+    if(!this.activar_vent_elim){
+      //la bandera es para ver si estamos agregando o no
+      if(band){
+        this.modo_edit=false
+      }
+          this.activar_vent=!this.activar_vent
+          if(this.activar_vent){
+            this.clase_vent_proy+=" activar"
+          }
+          else{
+            this.clase_vent_proy="reg";
+          }
+          if(!this.modo_edit){
+            this.proy_edit.nombre=''
+            this.proy_edit.descripcion=''
+            this.proy_edit.url=''
+
+          }
+
+
+          this.cargarProyecto()
+    }else{
+      this.activar_vent_elim=!this.activar_vent_elim
+      this.clase_vent_elim="reg"
     }
-        this.activar_vent=!this.activar_vent
-        if(this.activar_vent){
-          this.clase_vent_proy+=" activar"
-        }
-        else{
-          this.clase_vent_proy="reg";
-        }
-        if(!this.modo_edit){
-          this.proy_edit.nombre=''
-          this.proy_edit.descripcion=''
-          this.proy_edit.url=''
-
-        }
 
 
-        this.cargarProyecto()
+
+
       }
 
       delete(id?: number){

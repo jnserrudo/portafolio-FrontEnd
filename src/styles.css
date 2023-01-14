@@ -121,7 +121,7 @@ p{
 
 
 .barra_progreso{
-    width: 1000px;
+    width: 100%;
     border: 0.5px black solid;
 
 }
@@ -129,6 +129,7 @@ p{
 .skill_info{
     margin: 5px;
     padding-left: 100px;
+    width: 100%;
 }
 
 .cont_skills,.cont_proyectos{
@@ -161,7 +162,7 @@ p{
     width: 40%;
 }
 .experiencia,.educacion{
-    width: 600px;
+    width: 400px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 10px;
@@ -296,4 +297,16 @@ p{
   background-repeat: no-repeat;
   background-size:cover ;
   animation: efecto 6s infinite alternate linear;
+}
+
+
+@media (max-width: 500px) {
+
+  .cont_experiencia_educacion{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+
 }
