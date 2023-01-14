@@ -40,8 +40,7 @@
     <div class="vent_descrip">
       <div class="vent_descrip__img">
         <img src="../../../assets/exp_laboral.png" class="logo" alt="" />
-        <p>Url Logo</p>
-        <input type="text" class="form-control" #idInput_url_logo />
+
       </div>
       <div class="vent_descrip__info">
         <p class="">
@@ -80,7 +79,7 @@
             [(ngModel)]="edit_exp.fecha_hasta"
           />
         </p>
-        <p>Actualidad <input type="checkbox" name="" #idInput_actualidad /></p>
+        <p>Descripcion <textarea class="form-control" name="" id="" cols="30" rows="3" [(ngModel)]="edit_exp.descripcion" #idInput_descripcion ></textarea> </p>
       </div>
     </div>
     <div class="vent_btns">
@@ -89,12 +88,11 @@
         *ngIf="!modo_edit"
         (click)="
           agregar_exp(
-            idInput_url_logo,
             idInput_nom_cargo,
             idInput_nom_empresa,
             idInput_fecha_desde,
             idInput_fecha_hasta,
-            idInput_actualidad
+            idInput_descripcion
           )
         "
       >
@@ -105,12 +103,11 @@
         *ngIf="modo_edit"
         (click)="
           agregar_exp(
-            idInput_url_logo,
             idInput_nom_cargo,
             idInput_nom_empresa,
             idInput_fecha_desde,
             idInput_fecha_hasta,
-            idInput_actualidad
+            idInput_descripcion
           )
         "
       >

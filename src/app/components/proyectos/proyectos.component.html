@@ -1,14 +1,119 @@
 <div class="cont_proyectos">
-    <div class="cont_encabezado cont_encabezado_proyecto">
-        <h4>Proyectos</h4>
-        <img class="btn_agregar" [src]="img_agregar" (click)="activar_ventana()" alt="">
-
+  <div class="cont_encabezado cont_encabezado_proyecto">
+    <h4>Proyectos</h4>
+    <img
+      class="btn_agregar"
+      [src]="img_agregar"
+      (click)="activar_ventana(1)"
+      alt=""
+      *ngIf="isLogged"
+    />
+  </div>
+  <div class="cont_proyecto">
+    <div *ngFor="let per_proy of proyecto">
+      <app-per-proyecto
+        [per_proy]="per_proy"
+        (eventoProy_edit)="ventana_edit_proy($event)"
+        (eventoProy_eliminar)="ventana_elim_proy($event)"
+      ></app-per-proyecto>
     </div>
-    <div class="cont_proyecto">
-        <div *ngFor="let per_proy of lista_proyectos">
-            <app-per-proyecto [per_proy]="per_proy"></app-per-proyecto>
-        </div>
-    </div>
-
+  </div>
 </div>
 
+<!-- ventana emergente -->
+<div [class]="clase_vent_proy" id="reg">
+  <div class="cont_vent ventana_educacion" id="cont_vent">
+    <div class="vent_titulo">
+      <h4>Proyecto</h4>
+      <img
+        src="../assets/cruz.png"
+        alt=""
+        class="icono_cerrar"
+        (click)="activar_ventana()"
+        id="icono_cerrar"
+      />
+    </div>
+    <div class="vent_descrip">
+      <div class="vent_descrip__img">
+        <img src="../../../assets/educacion.png" class="logo" alt="" />
+        <p>Url Proyecto</p>
+        <input type="text" class="form-control" #idInput_url_proyecto  [(ngModel)]="proy_edit.url"/>
+      </div>
+      <div class="vent_descrip__info">
+        <p class="">
+          Nombre del Proyecto<input
+            type="text"
+            class="form-control"
+            name=""
+            #idInput_nom_proyecto
+            [(ngModel)]="proy_edit.nombre"
+          />
+        </p>
+        <p>
+          Descripcion
+          <textarea
+            class="form-control"
+            name=""
+            id=""
+            cols="30"
+            rows="3"
+            #idInput_descripcion
+            [(ngModel)]="proy_edit.descripcion"
+          ></textarea>
+        </p>
+      </div>
+    </div>
+    <div class="vent_btns">
+      <button
+        class="btn btn_accion btn-primary"
+        *ngIf="!modo_edit"
+        (click)="
+          agregar_proy(
+            idInput_nom_proyecto,
+            idInput_url_proyecto,
+            idInput_descripcion
+          )
+        "
+      >
+        Aceptar
+      </button>
+      <button
+        class="btn btn_accion btn-primary"
+        *ngIf="modo_edit"
+        (click)="
+          agregar_proy(
+            idInput_nom_proyecto,
+            idInput_url_proyecto,
+            idInput_descripcion
+          )
+        "
+      >
+        Editar
+      </button>
+      <button class="btn btn_accion btn-secondary" (click)="activar_ventana()">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>
+
+<div [class]="clase_vent_elim" id="reg">
+  <div class="cont_vent ventana_eliminar" id="cont_vent">
+    <div class="vent_titulo">
+      <h4>Eliminar</h4>
+      <img
+        src="../assets/cruz.png"
+        alt=""
+        class="icono_cerrar"
+        id="icono_cerrar"
+      />
+    </div>
+    <p>¿Esta seguro de Eliminar?</p>
+    <div class="vent_btns">
+      <button class="btn btn_accion btn-primary" (click)="delete()">
+        Aceptar
+      </button>
+      <button class="btn btn_accion btn-secondary">Cancelar</button>
+    </div>
+  </div>
+</div>

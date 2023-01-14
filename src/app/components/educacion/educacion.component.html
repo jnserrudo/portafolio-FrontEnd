@@ -6,6 +6,7 @@
       [src]="img_agregar"
       (click)="activar_ventana(1)"
       alt=""
+      *ngIf="isLogged"
     />
   </div>
   <div *ngFor="let per_edu of educacion">
@@ -74,7 +75,7 @@
             [(ngModel)]="edu_edit.fecha_hasta"
           />
         </p>
-        <p>Actualidad <input type="checkbox" name="" #idInput_actualidad /></p>
+
       </div>
     </div>
     <div class="vent_btns">
@@ -87,8 +88,7 @@
             idInput_nom_educacion,
             idInput_nom_institucion,
             idInput_fecha_desde,
-            idInput_fecha_hasta,
-            idInput_actualidad
+            idInput_fecha_hasta
           )
         "
       >
@@ -103,8 +103,7 @@
             idInput_nom_educacion,
             idInput_nom_institucion,
             idInput_fecha_desde,
-            idInput_fecha_hasta,
-            idInput_actualidad
+            idInput_fecha_hasta
           )
         "
       >

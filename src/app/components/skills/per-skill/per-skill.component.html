@@ -7,9 +7,9 @@
                             <div *ngSwitchCase="3" class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">{{porcentaje}}%</div>
                             <div *ngSwitchCase="4" class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{porcentaje}}%</div>
                         </div>
-                    </div>                
-                    <div class="acciones">
-                        <img class="btn_editar" src="/assets/editar.png" alt="">
-                        <img class="btn_editar" src="/assets/borrar.png" alt="">
+                    </div>
+                    <div class="acciones" *ngIf="isLogged">
+                      <img class="btn_editar" src="/assets/editar.png" (click)="evento_edit_skill()" alt="">
+                      <img class="btn_editar" src="/assets/borrar.png" (click)="evento_elim_skill()" alt="">
                     </div>
 </div>

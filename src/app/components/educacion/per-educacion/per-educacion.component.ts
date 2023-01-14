@@ -10,7 +10,7 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class PerEducacionComponent implements OnInit {
   @Input() per_edu:any;
-  url_logo :string;
+  url_logo :string='';
   nom_educacion :string;
   nom_institucion :string;
   //id_domicilio : number;
@@ -29,7 +29,6 @@ export class PerEducacionComponent implements OnInit {
 
 
   constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) {
-    this.url_logo ="";
     this.nom_educacion ="";
     this.nom_institucion ="";
     //this.id_domicilio=-1;
@@ -46,7 +45,6 @@ export class PerEducacionComponent implements OnInit {
   isLogged = false;
 
   ngOnInit(): void {
-    this.url_logo =this.per_edu.url_logo;
     this.nom_educacion =this.per_edu.nom_educacion;
     this.nom_institucion =this.per_edu.nom_institucion;
     //this.id_domicilio=-1;
@@ -65,6 +63,8 @@ export class PerEducacionComponent implements OnInit {
     this.nom_educacion=this.nombreE
     this.nom_institucion=this.descripcion.split(',')[0]
     this.fecha=this.descripcion.split(',')[1]
+
+    this.url_logo ="/assets/educacion_per.png"
 
   }
 

@@ -43,7 +43,8 @@ export class ExperienciaComponent implements OnInit {
       nom_cargo:"",
       nom_empresa:"",
       fecha_desde:"",
-      fecha_hasta:""
+      fecha_hasta:"",
+      descripcion:""
 
     }
   }
@@ -76,6 +77,7 @@ if(band){
       this.edit_exp.nom_empresa=''
       this.edit_exp.fecha_desde=''
       this.edit_exp.fecha_hasta=''
+      this.edit_exp.descripcion=''
     }
 
 
@@ -91,7 +93,7 @@ if(band){
       console.log(this.edit_exp)
   }
 
-  agregar_exp(url_logo:HTMLInputElement,nom_cargo:HTMLInputElement,nom_empresa:HTMLInputElement,fecha_desde:HTMLInputElement,fecha_hasta:HTMLInputElement,actualidad:HTMLInputElement):void{
+  agregar_exp(nom_cargo:HTMLInputElement,nom_empresa:HTMLInputElement,fecha_desde:HTMLInputElement,fecha_hasta:HTMLInputElement,descripcion_exp:HTMLTextAreaElement):void{
   //   this.nueva_exp.url_logo=url_logo.value
   //   this.nueva_exp.nom_cargo=nom_cargo.value
   //   this.nueva_exp.nom_empresa=nom_empresa.value
@@ -110,7 +112,7 @@ if(band){
   //   this.nueva_exp.fecha_hasta=""
   //   this.nueva_exp.actualidad="" */
   this.nombreE=nom_cargo.value
-  this.descripcion=`${nom_empresa.value}, ${fecha_desde.value} a ${fecha_hasta.value}`
+  this.descripcion=`${nom_empresa.value}, ${fecha_desde.value} a ${fecha_hasta.value}, ${descripcion_exp.value}`
 
   const expe=new Experiencia(this.nombreE,this.descripcion)
 
@@ -166,6 +168,7 @@ ventana_edit_exp(per_exp:any):void{
       this.edit_exp.fecha_desde=per_exp.descripcionE.split(',')[1].split('a')[0].trim()
       console.log(new Date(per_exp.descripcionE.split(',')[1].split('a')[0]),new Date(per_exp.descripcionE.split(',')[1].split('a')[1]))
       this.edit_exp.fecha_hasta=per_exp.descripcionE.split(',')[1].split('a')[1].trim()
+      this.edit_exp.descripcion=per_exp.descripcionE.split(',')[2]
       this.modo_edit=true
       this.activar_ventana()
       console.log(this.edit_exp)

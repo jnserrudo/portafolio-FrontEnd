@@ -107,7 +107,7 @@ export class EducacionComponent implements OnInit {
 
 
 
-  agregar_edu(url_logo:HTMLInputElement,nom_educacion:HTMLInputElement,nom_institucion:HTMLInputElement,fecha_desde:HTMLInputElement,fecha_hasta:HTMLInputElement,actualidad:HTMLInputElement):void{
+  agregar_edu(url_logo:HTMLInputElement,nom_educacion:HTMLInputElement,nom_institucion:HTMLInputElement,fecha_desde:HTMLInputElement,fecha_hasta:HTMLInputElement):void{
 
     /**se inserta la nueva educacion */
     this.nombreE=nom_educacion.value

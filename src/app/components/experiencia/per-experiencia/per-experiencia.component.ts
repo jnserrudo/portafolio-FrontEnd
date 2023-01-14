@@ -24,6 +24,8 @@ export class PerExperienciaComponent implements OnInit {
   nombreE:string;
   descripcion:string;
 
+  descripcion_expe:string;
+
   expLab?:Experiencia; //la usaremos para editar la experiencia
   @Output() eventoExp_edit=new EventEmitter<string>()
   @Output() eventoExp_eliminar=new EventEmitter<string>()
@@ -45,12 +47,13 @@ export class PerExperienciaComponent implements OnInit {
 
     this.nombreE="";
     this.descripcion=""
+
+    this.descripcion_expe=""
   }
   isLogged = false;
 
-
   ngOnInit(): void {
-    // this.url_logo =this.per_exp.url_logo;
+    this.url_logo ="/assets/educacion_per.png";
     // this.nom_cargo =this.per_exp.nom_cargo;
     // this.tipo_jornada=this.per_exp.tipo_jornada;
     // this.nom_empresa =this.per_exp.nom_empresa;
@@ -70,6 +73,7 @@ export class PerExperienciaComponent implements OnInit {
     this.nom_cargo=this.nombreE
     this.nom_empresa=this.descripcion.split(',')[0]
     this.fecha=this.descripcion.split(',')[1]
+    this.descripcion_expe=this.descripcion.split(',')[2]
 
   }
 

@@ -3,18 +3,16 @@ export class persona{
   nombre:string;
   apellido:string;
   img:string;
-  url_linkedin:string;
-  email:string;
-  celular:number;
+  descripcion:string;
 
-  constructor(nombre:string,apellido:string,img:string,url_linkedin:string,email:string,celular:number){
+
+  constructor(nombre:string,apellido:string,img:string,descripcion:string){
 
     this.nombre=nombre;
     this.apellido=apellido;
     this.img=img;
-    this.url_linkedin=url_linkedin;
-    this.email=email;
-    this.celular=celular;
+    this.descripcion=descripcion;
+
   }
   //debemos crear un servicio que utilice este modelo
 

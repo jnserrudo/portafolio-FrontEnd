@@ -1,10 +1,10 @@
 <div class="proyecto">
     <div class="proyecto_info">
-        <h6 class="txt_celeste">{{nom_proyecto}}</h6>
+        <a [href]="url" target="_blank"><h6 class="txt_celeste">{{nombre}}</h6></a>
         <p>{{descripcion}}</p>
     </div>
     <div class="acciones">
-        <img class="btn_editar" src="/assets/editar.png" alt="">
-        <img class="btn_editar" src="/assets/borrar.png" alt="">
+        <img class="btn_editar" src="/assets/editar.png" (click)="evento_edit_proy()" alt="">
+        <img class="btn_editar" src="/assets/borrar.png" (click)="evento_elim_proy()" alt="">
     </div>
 </div>
